@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test17</title>
+  <style>
+    #layer1{
+      width: 400px;
+      height: 300px;
+      /* background-color: aqua; */
+      background-image: url("../images/6small.jpg");
+    }
+    #tbl1 , #tbl2, #tbl3{
+      border: 1px solid black;
+      width: 600px;
+      height: 400px;
+      /* background-color: black; */
+      border-collapse: collapse;
+    }
+    #tbl1{
+      
+      background-image: url("../images/6small.jpg");
+      background-repeat: no-repeat;
+      background-position: right bottom;
+    }
+    #tbl2{
+      
+      border: 5px solid blue;
+      border-collapse: collapse;
+    }
+    td{
+      margin: 0px;
+      padding: 0px;
+      border: 1px solid blue;
+      text-align: center;
+    }
+    .tra{
+      background-color: skyblue;
+    }
+    #tbc{
+      background-image: url(../images/6small.jpg);
+    }
+    #tro{
+      background: linear-gradient(to right, yellow,blue);
+    }
+    #trp{
+      background: radial-gradient(circle, white,red);
+    }
+    #trq{
+      background-image: url("../images/bgpattern.png");
+    }
+    #trr{
+      background: linear-gradient(to bottom, yellowgreen,skyblue);
+    }
+  </style>
+</head>
+<body>
+  <div id="layer1"></div>
+  <table id="tbl1">
+    <tr >
+      <td>
+
+      </td>
+    </tr>
+  </table>
+  <table id="tbl2">
+    <tr class="tra">
+      <td style="width:50%">1</td>
+      <td style="width:25%">2</td>
+      <td style="width:50%">3</td>
+    </tr>
+    <tr >
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr class="tra">
+      <td>7</td>
+      <td>8</td>
+      <td id="tbc">9</td>
+    </tr>
+  </table>
+  <table id="tbl3">
+    <tr id="tro">
+      <td >1</td>
+      <td >2</td>
+      <td >3</td>
+    </tr>
+    <tr id="trp" >
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr id="trq">
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr id="trr">
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table>
+</body>
+</html>
