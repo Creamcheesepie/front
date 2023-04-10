@@ -1,0 +1,35 @@
+*{
+  /* box-sizing: border-box; */
+}
+body{
+  margin: 0px;
+}
+ul{
+  list-style: none;
+  border: 2px solid gray;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  display: grid;
+  height: 500px;
+  /*
+  grid-template-columns: 100px 1fr 1fr;
+  grid-template-rows: 100px 1fr 1fr;
+  gap: 10px;
+  */
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(2, minmax(100px,auto));
+  grid-template-rows: repeat(2, minmax(100px,auto));
+  /* 최소 크기를 100px로 설정*/
+  gap: 10px;
+}
+li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  
+}
+li:nth-child(2n){
+  background-color: rgb(136, 236, 236);
+}
+

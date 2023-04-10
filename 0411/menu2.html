@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>menu2.html</title>
+  <style>
+    /* 전체 초기설정 */
+    /* 리스트 초기설정 */
+    body, ul, li{
+      margin: 0px;
+      padding: 0px;
+      padding: 0px;
+      list-style: NONE;
+    }
+    /* 앵커태그 초기설정 */
+    a{
+      text-decoration: inherit;
+    }
+    /* 주메뉴 설정작업 */
+    nav{
+      text-align: center;
+    }
+    nav > ul{
+      background-color: antiquewhite;
+    }
+    nav > ul > li{
+      display: inline-block;
+      padding: 10px;
+      width: 110px;
+      border: 2px solid bisque
+    }
+    nav >ul >li:hover{
+      display: inline-block;
+      padding: 10px;
+      width: 110px;
+      background-color:cornsilk;
+    }
+    /*서브 메뉴 설정*/
+    nav > ul > li > ul{
+      display: none;
+    }
+    nav li:hover > ul{
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">주메뉴1</a>
+        <ul>
+          <li><a href="#">서브메뉴1</a></li>
+          <li><a href="#">서브메뉴2</a></li>
+          <li><a href="#">서브메뉴3</a></li>
+          <li><a href="#">서브메뉴4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">주메뉴2</a>
+        <ul>
+          <li><a href="#">서브메뉴1</a></li>
+          <li><a href="#">서브메뉴2</a></li>
+          <li><a href="#">서브메뉴3</a></li>
+          <li><a href="#">서브메뉴4</a></li>
+        </ul>
+      </li>
+        <li><a href="#">주메뉴3</a>
+          <ul>
+            <li><a href="#">서브메뉴1</a></li>
+            <li><a href="#">서브메뉴2</a></li>
+            <li><a href="#">서브메뉴3</a></li>
+            <li><a href="#">서브메뉴4</a></li>
+          </ul>
+        </li>
+        <li><a href="#">주메뉴4</a>
+          <ul>
+            <li><a href="#">서브메뉴1</a></li>
+            <li><a href="#">서브메뉴2</a></li>
+            <li><a href="#">서브메뉴3</a></li>
+            <li><a href="#">서브메뉴4</a></li>
+          </ul>
+      </li>
+    </ul>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test1.html(레이아웃 연습)</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    #container{
+      width: 1000px;
+      margin: 0 auto;
+      background-color: antiquewhite;
+    }
+    header{
+      height: 100px;
+      background-image: url(../images/2.jpg);
+      color: white;
+      font-size: 20px;
+      font-weight: bolder;
+    }
+    nav{
+      line-height: 100px;
+      text-align: center;
+    }
+    #layer1,#layer2,#layer3,#layer5,#layer6{
+      width:200px;
+      height: 250px;
+    }
+    #content1{
+      float: left;
+      width: 200px;
+    }
+    #content2{
+      float: left;
+      width: 600px;
+    }
+    #content3{
+      float: right;
+      width: 200px;
+    }
+    footer{
+      clear: both;
+      height: 120px;
+      background-color: cadetblue;
+    }
+    #layer1{
+      background-color: red;
+    }
+    #layer2{
+      background-color: orange;
+    }
+    #layer3{
+      background-color: yellow;
+    }
+    #layer5{
+      background-color: green;
+    }
+    #layer6{
+      background-color: blue;
+    }
+    #layer4-1,#layer4-2, #layer4-3, #layer4-4{
+      width: 240px;
+      height: 300px;
+      margin: 10px;
+      padding: 20px;
+      float: left;
+    }
+    #layer4-1{
+      background-color:crimson;
+    }
+    #layer4-2{
+      background-color: coral;
+    }
+    #layer4-3{
+      background-color: gold;
+    }
+    #layer4-4{
+      background-color: yellowgreen;
+    }
+  </style>
+</head>
+<body>
+  <Div id="container" name="container" >
+    <header>
+      <nav>
+        <span>레이아웃 연습</span>
+        <span>레이아웃 연습</span>
+        <span>레이아웃 연습</span>
+      </nav>
+    </header>
+    <section>
+      <div id="content1">
+        <div id="layer1">
+          연습1
+        </div>
+        <div id="layer2">
+          연습2
+        </div>
+        <div id="layer3">
+          연습3
+        </div>
+      </div>
+      <div id="content2">
+        <div id="layer4-1">
+          <h3>공지사항</h3><br/>
+          1.연습 4-1<br/>
+          1.연습 4-2<br/>
+          1.연습 4-3<br/>
+          1.연습 4-4<br/>
+          1.연습 4-5<br/>
+        </div>
+        <div id="layer4-2">
+          <h3>신입회원</h3><br/>
+          2.연습 4-1<br/>
+          2.연습 4-2<br/>
+          2.연습 4-3<br/>
+          2.연습 4-4<br/>
+          2.연습 4-5<br/>
+        </div>
+        <div id="layer4-3">
+          <h3>이벤트</h3><br/>
+          3.연습 4-1<br/>
+          3.연습 4-2<br/>
+          3.연습 4-3<br/>
+          3.연습 4-4<br/>
+          3.연습 4-5<br/>
+        </div>
+        <div id="layer4-4">
+          <h3>신제품</h3><br/>
+          1.연습 4-1<br/>
+          1.연습 4-2<br/>
+          1.연습 4-3<br/>
+          1.연습 4-4<br/>
+          1.연습 4-5<br/>
+        </div>
+      </div>
+      <div id="content3">
+        <div id="layer5">
+          연습5
+        </div>
+        <div id="layer6">
+          연습6
+        </div>
+      </div>
+    </section>
+    <footer>
+      Copyright : design by killdong.
+    </footer>
+  </Div>
+</body>
+</html>

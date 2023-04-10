@@ -1,0 +1,43 @@
+*{
+  /* box-sizing: border-box; */
+}
+body{
+  margin: 0px;
+}
+ul{
+  display: flex;
+  list-style: none;
+  height: 300px;
+  
+}
+li{
+  background-color: beige;
+}
+li:nth-child(2n){
+  background-color: rgb(136, 236, 236);
+}
+/*
+li:nth-child(2){
+  flex-grow: 1;
+  flex-shrink:2;
+}
+li:nth-child(3){
+  flex-grow: 2;
+  flex-shrink: 3;
+}
+*/
+li:nth-child(1){
+  order:5/*배치순서*/
+}
+li:nth-child(2){
+  order:4
+}
+li:nth-child(3){
+  order:3
+}
+li:nth-child(4){
+  order:2
+}
+li:nth-child(5){
+  order:1
+}

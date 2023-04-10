@@ -1,0 +1,24 @@
+*{
+  /* box-sizing: border-box; */
+}
+body{
+  margin: 0px;
+}
+ul{
+  display: flex;
+  list-style: none;
+  height: 300px;
+  padding: 0px;
+  flex-direction: row;
+  /* flex-direction: column-reverse; */
+  /* flex-wrap: wrap-reverse ; */
+  border:2px solid red;
+  justify-content: flex-start;
+  /* justify-content: space-evenly; 가로축 기준 배열*/
+  /* align-items: center; 세로축 기준 배열 */
+  align-items: center;
+  align-content: space-between;
+}
+li:nth-child(3){  /*개별 항목에 대한 설정*/
+  align-self: flex-start;
+}
