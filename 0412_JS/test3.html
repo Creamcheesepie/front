@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test3.html</title>
+  <script>
+    document.write("1안뇽1<br/>");
+    atom1();//함수 호출 <script>블록 안이라면 하나의 dom 안의 객체로 여겨 한번에 실행한다.
+      //선언한 블록 위에서는 자바 스크립트를 쓸 수 없다? << 체크해보기
+    //함수로 둘러싼 내용은 호출을 할 때만 실행된다.
+    function atom1(){
+      document.write("이곳은 atom1함수 내부입니다<br/>")
+    }
+    atom1();
+    document.write("2안뇽?2<br/>");
+    atom2(); //선언이 되지 않은 상태에서 호출하면 표시되지 않고, 에러를 콘솔창에 출력하게된다.
+    // ***순서가 중요***
+    //ex) 입력하는 도중에 자바 스크립트를 사용할 일이 있다면 폼 위에 올려두어야 한다.
+    // 입력 후에 자바 스크립트를 사용할 일이 있다면 폼 위나 아래나 상관이 없다 >> html에서는 상단에서 아래로 가면서 코드를 수행하기 때문.
+    // 모든 자료를 입력받은 후에 처리 할 경우에는 자바스크립트를 아래로 두는게 좋다.
+  </script>
+</head>
+<body>
+  <h2>자바스크립트 함수를 이용한 출력</h2>
+  <script>
+    document.write("안3녕3<br/>")
+    atom1();
+    function atom2(){
+      document.write("이곳은 atom2 함수 내부입니다 >,< <br/>")
+    }
+    atom1();
+    atom2();
+
+  </script>
+</body>
+</html>

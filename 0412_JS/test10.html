@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test10.html</title>
+  <script>
+    'use strict'; // 이 명령문 사용시, 변수 타입을 선언한 후에만 사용할 수 있다.
+    let su2= 200;
+    console.log("1.su2 : " + (su2+=100));
+    console.log("1.typeof(su2) : " + typeof(su2));
+    {
+      console.log("2. 블럭 안 su2 : " + (su2+=100));
+      
+    }
+    console.log("3. 블럭 밖, 아래 su2 : " + (su2+=100));
+
+    {
+      let su3= 100;
+      console.log("1. 블럭 안 su3 : " + (su3+=100));
+      
+    }
+    // console.log("2. 블럭 밖, 아래 su3 : " + (su3+=100));
+
+    const su4=100;
+
+    // console.log(" su4 : " + (su4+=100)); >>오류
+    /*
+    var 변수는 사용을 지양함 (타 언어와 차이가 존재하기 때문에 개념의 혼동 가능성 있음.)
+    따라서 js에서는 let을 사용함.
+    js의 상수는 const >> 이것의 값을 바꾸려고 하면 오류가 발생.
+    */
+    // su5 =500;위에서 use strict를 썼기 때문에 사용할 수 없음.
+    let su5=500;
+    console.log("su5 : " + (su5+=100));
+  </script>
+</head>
+<body>
+  <h2>자바스크립트</h2>
+</body>
+</html>

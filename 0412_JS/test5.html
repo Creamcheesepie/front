@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test5.html</title>
+  <script>
+    document.write("1안뇽1<br/>");
+    atom1();
+    function atom1(){
+      document.write("이곳은 atom1함수 내부입니다<br/>")
+    }
+    atom1();
+    document.write("2안뇽?2<br/>");
+    // atom2(); //선언이 되지 않은 상태에서 호출하면 표시되지 않고, 에러를 콘솔창에 출력하게된다.
+  </script>
+</head>
+<body>
+  <h2>자바스크립트 함수를 이용한 출력</h2>
+  <script>
+    document.write("안3녕3<br/>")
+    atom1();
+    function atom2(mbc){
+      document.write("mbc : " + mbc + "<br/>"); //자바스크립트에서는 값을 주지 않으면 undifined 서식으로 출력되게 된다(오류아님!)
+      document.write("이곳은 atom2 함수 내부입니다 >,< <br/>")
+      atom1(); //함수 안에서 함수를 호출하기
+    }
+    atom1();
+    atom2(); //atom2를 호출하게 되면 atom1의 함수도 호출하기 때문에 atom2의 내용 표시 후, atom1의 내용을 호출하게 된다.
+    atom2(1000);
+    atom2("><");
+  </script>
+</body>
+</html>

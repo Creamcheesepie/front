@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test6.html</title>
+  <script>
+    atom1();
+    function atom1(){
+      document.write("이곳은 atom1 함수 안이다." , 100, "<br/>");
+      document.write("이곳은 atom1 함수 안이다." , (100+200) , "<br/>");
+      document.write("이곳은 atom1 함수 안이다." + (100+300) + "<br/>");
+
+      console.log("이곳은 atom1 함수 안이에용");
+      console.log("이곳은 atom1 함수 안이에용",100);
+      console.log("이곳은 atom1 함수 안이에용",(100+100));
+      console.log("이곳은 atom1 함수 안이에용" + (100+200));
+
+      alert("이곳은 atom1 함수 안이에요~");
+      // alert("이곳은 atom1 함수 안이에요~",100);
+      alert("이곳은 atom1 함수 안이에요~" + 100); //alert의 경우에는 ,를 쓸 수 없다. 따라서 그냥 편하게 +를 쓰자.
+    }
+    atom1();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
