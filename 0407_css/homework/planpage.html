@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font.css">
+    <style>
+        #planadd{
+            position: relative;
+            top: 30px;
+            left: 30px;
+            
+        }
+        #plansujung{
+            position: relative;
+            top: 40px;
+            left: 30px;
+            
+        }
+        #plancancle{
+            position: relative;
+            top: 50px;
+            left: 30px;
+            
+        }
+        #return{
+            position: relative;
+            top: 60px;
+            left: 30px;
+        }
+        #monthplan{ /**/
+            background-color: aqua;
+            margin: 45PX;
+            font-size: 30px;
+            border-spacing: 30px;
+            border-top: 30px;
+        }
+        #info{
+            margin-left: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="fBox1" name="fBox1">
+        <div id="maintitle" name="maintitle">
+            Chungju Cycle
+        </div>
+        <div id="planadd" name="planadd" class="menubutton" style=" cursor: pointer;">
+            모임 추가
+        </div>
+        <div id="plansujung" name="plansujung" class="menubutton" style=" cursor: pointer;">
+            모임 수정
+        </div>
+        <div id="plancancle" name="plancancle" class="menubutton" style=" cursor: pointer;">
+            모임 취소
+        </div>
+        <div id="return" name="return"class="menubutton" style=" cursor: pointer;">
+            <a href="./frontpage.html">돌아가기</a>
+        </div>
+        <div id="frontpage" name="frontpage" class="pagesector">
+            <!-- 모임 조회기능, 모임일정 정하기 -->
+            <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;모임 일정</h2>
+            <div>
+            <table id="monthplan" name="monthplan">
+                <tr>
+                    <td>1주차 모임계획</td>
+                    <td>월</td>
+                    <td>화</td>
+                    <td>수</td>
+                    <td>목</td>
+                    <td>금</td>
+                    <td>토</td>
+                    <td>일</td>
+                </tr>
+                <tr>
+                    <td>2주차 모임계획</td>
+                    <td>월</td>
+                    <td>화</td>
+                    <td>수</td>
+                    <td>목</td>
+                    <td>금</td>
+                    <td>토</td>
+                    <td>일</td>
+                </tr>
+                <tr>
+                    <td>3주차 모임계획</td>
+                    <td>월</td>
+                    <td>화</td>
+                    <td>수</td>
+                    <td>목</td>
+                    <td>금</td>
+                    <td>토</td>
+                    <td>일</td>
+                </tr>
+                <tr>
+                    <td>4주차 모임계획</td>
+                    <td>월</td>
+                    <td>화</td>
+                    <td>수</td>
+                    <td>목</td>
+                    <td>금</td>
+                    <td>토</td>
+                    <td>일</td>
+                </tr>
+            </table>
+        </div>
+            <div id="info" name="info">
+                모임 내용
+                <textarea rows="27" cols="100" placeholder="모임 내용입니다"></textarea>
+                <input type="submit" value="저장">
+                <input type="reset" value="취소">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

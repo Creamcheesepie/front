@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 메뉴용나눔고딕;
+    src: url(/0407_css/homework/NanumGothicBold.otf);
+}
+#maintitle{
+    font-size: 55px;
+    color: rgb(242, 252, 255);
+    font-weight: 900;
+    font-family: fantasy;
+    letter-spacing: 2px;
+    text-shadow: 2px 4px 7px rgb(120, 120, 160);
+
+    position: relative;
+    left: 45px;
+    top: 15px;
+}
+#fBox1{
+    width: 1920px;
+    height: 1080px;
+    position: fixed;
+    margin: 0px;
+    padding-right: 0px;
+    background-color: rgb(116, 240, 240);
+    background: linear-gradient(60deg, rgb(116, 240, 240),rgb(231, 248, 248));
+}
+.menubutton{
+    width: 200px;
+    height: 70px;
+    background: linear-gradient(60deg, aqua,rgb(176, 255, 255));
+    color: rgb(34, 82, 104);
+    align-items:center;
+    text-align: center;
+    line-height: 78px;
+    font-size: 20px;
+    font-family: 메뉴용나눔고딕;
+    font-weight: bolder;
+}
+.menubutton:hover{
+    color: rgb(3, 150, 150);
+
+}
+a{
+    text-decoration: none;
+    color:rgb(34, 82, 104)
+}
+.pagesector{
+    width: 1550px;
+    height: 900px;
+    background-color: white;
+    position: fixed;
+    top:105px;
+    left: 280px;
+    font-family: 메뉴용나눔고딕;
+
+}

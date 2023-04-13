@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test3_3.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    #demo{
+      justify-content: start;
+    }
+  </style>
+  <script>
+    'use strict'
+    function gugudan(){
+      let dan1 = document.getElementById("dan1").value.trim();
+      let dan2 = document.getElementById("dan2").value.trim();
+      let les =0;
+      if(dan1 == ""){
+        alert("앞쪽 단을 입력하세요")
+        return false;
+      }
+      else if(dan2 == ""){
+        alert("뒤쪽 단을 입력하세요")
+        return false;
+      } 
+      else if(dan1>dan2){
+        let temp =dan1
+        document.getElementById("dan1").value = dan2;
+        document.getElementById("dan2").value = temp;
+        alert("끝단보다 시작단의 수가 크면 안됩니다! 그래서 바꾸어 드렸습니다. 친절하죠?")
+      }
+      let hang = document.getElementById("hang").value;
+      let sw=false
+      let cnt=0;
+      let str='';
+      str += "<div class='row mt-2'>"
+        for(let i=dan1; i<=dan2; i++ ){
+          if(sw) {
+              str+="<div class='row mt-2'>"
+              sw=false
+            }
+          str += "<div class=col<h4>"+i+"단</h4></div>"
+          str += "<div class='col'>"
+          for(let j=1;j<10;j++){
+          les=eval(i*j);
+          str += "<b>"+i+" x " + j+ "=" +les +"</b></br>" ; 
+        }
+        str+= "</div>"
+        cnt++
+        if(cnt%hang==0){
+          str +="</div>"
+          sw=true;
+      }
+      }
+      demo.innerHTML=str
+    }
+
+    //화면 초기화
+    function cleenCheck(){
+      // document.getElementById("dan").value ='1';
+      // demo.innerText="";
+      location.reload();
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <p><br/></p>
+    <h2>반복문 연습</h2>
+    <p>
+      출력할 시작단과 끝단을 입력하세요.
+    </p>
+    <div><b>조건</b> <br/>
+      1. 입력된 시작단이 끝단보다 크면 끝단을 두 수를 비교해서 작은단부터 출력<br/> <!--이중 for문 처리, 시작과 끝을 첫번째 반복횟수로 정하기, if문 대소 비교해서 큰수 작은 수 교체-->
+      2. 출력되는 단은 세로방향이 아닌 가로방향으로 출력하시오.(한 행에 출력할 횟수를 입력처리?)
+    </div>
+    <div>
+      여기서부터~ : <input type="number" name="dan1" id="dan1" value='1' autofocus>
+      ~여기까지! : <input type="number" name="dan2" id="dan2" value='1' >
+      행 개수 : <input type="number" name=" hang" id="hang" value='1' >
+      <input type="button" value="for문 연습" onclick="gugudan()" class="btn btn-success">
+      <input type="button" value="다시입력" onclick="cleenCheck()" class="btn btn-warning" >
+    </div>
+    <div id="demo" name="demo" >
+
+
+    </div>
+    <p><br/></p>  
+  </div>
+</div>
+</body>
+</html>
