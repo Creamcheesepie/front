@@ -15,9 +15,9 @@ let yymmdd = year +"-"+month+"-"+date+" "+hour+":"+minute+":"+second;
 
 //표준날짜 출력
 function fCheck1(){
-  yymmdd=year +"-"+month+"-"+date
+  // yymmdd=year +"-"+month+"-"+date
   document.getElementById("date1").value=yymmdd;
-  demo.innerHTML= today
+  demo.innerHTML= yymmdd
 }
 //날짜 비교하기 (isSameDay(날자형식1,날짜형식2));
 function fCheck2(){
@@ -32,4 +32,26 @@ function fCheck2(){
 
   demo.innerHTML="비교한 날짜는?" + temp;
 
+}
+//날짜 비교하기(경과된 시간으로 비교하기)
+function fCheck3(){
+  let st = document.getElementById("date1").value;
+  let end = document.getElementById("date2").value;
+
+  const stDate =new Date(st);
+  const endDate = new Date(end);
+  
+  //getTime() : 1/1000초
+  let temp = endDate.getTime() - stDate.getTime();
+  temp = temp / (60*60*26*1000) // 1/1000초 단위를 날짜로 변환
+
+
+  demo.innerHTML="비교한 날짜는? : " + temp.toFixed() + "일 차이가 납니다";
+
+}
+
+function isSameDay(stDate, endDate){
+  return stDate.getFullYear() === endDate.getFullYear() &&
+  stDate.getMonth() === endDate.getMonth() &&
+  stDate.getDate() === endDate.getDate();
 }

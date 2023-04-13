@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test1.html(정규식)</title>
+  <script src="test1.js"></script>
+</head>
+<body>
+  <h2>정규식(RegEx)</h2>
+  <Form name="myform">
+    <div>
+      문자열<br/>
+      <div><input type="text" name="content" id="content" autofocus required/></div><br>
+      <div><input type="button" value="정규식쳌" onclick="regexCheck()"></div>
+    </div>
+  </Form>
+  <hr/>
+  <pre>
+    형식 : / ~~~~ / 플러그인
+    플러그인 : 
+      g(global) : 전체범위에서 처리
+      m(mulitline) : 여러 줄에 걸쳐서 처리(textarea 태그에서 이용)
+      s(singleline) : 한줄만 처리(기본값)
+      i : 영문자인 경우 대문자와 소문자 구별을 하지 않는다.
+      u(unicode) : 유니코드에 대한 처리
+      정규식을 실행하기 위해서 사용되는 함수?
+        1. 사용자 입력 문자열 .match(정규표현식변수) : 포함 유무에 대한 비교시 사용하면 편리하다.
+        2. 정규표현식 변수 .test(사용자 입력 문자열) : 구체적인 문자(열)간의 체크ㅔ 비교시 편함.
+  </pre>
+  <p>
+    form 안에서의 값을 입력 후 서버로 전송시, 유효성 검사는 필수입니다.
+  </p>
+</body>
+</html>
