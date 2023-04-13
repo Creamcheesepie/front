@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test16.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict'
+
+    function comIn1(){
+      let num = myform.num.value.trim();
+
+      if(num == "" || isNaN(num)){
+        alert("수를 입력해주세요.")
+        myform.num.select(); //내용 선택해줌.
+        myform.num.focus();
+        return false;
+      }
+      while(num.substring(0,1) == 0){
+        num = num.substring(1,num.length) //첫번째에 0 들어있으면 소거.
+        demo.innerHTML = comma(num)
+      }
+
+
+      function comma(num){
+        let numlen = num.length;
+        let numstr='';
+        let numPoint = numlen%3;
+        numstr = num.substring(0,numPoint);
+        while(numPoint<numlen){
+          if(numstr !='') numstr+=",";
+          numstr+=(numPoint,numPoint+3);
+          numPoint+=3;
+        }
+        return numStr;
+      }
+
+    }
+    function comIn2(){
+      let num;
+      while(num.substring(0,1) == 0){
+        num = num.substring(1,num.length) //첫번째에 0 들어있으면 소거.
+        demo.innerHTML = comma(num)
+      }
+
+      num =myform.num.value;
+      demo.innerHTML =numberWithComma(num);
+    }
+    //쉼표 추가하기 정규시 활용
+    function numberWithComma(num){
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
+    }
+
+  </script>
+
+
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h2>쉼표처리</h2>
+    <form name="myform">
+      <p>
+        수 <input type="text" name="num" value="12345" autofocus>
+      </p>
+      <p>
+        <input type="button" value="쉼표추가" onclick="comIn1()" class="btn btn-success"/>
+        <input type="button" value="쉼표추가2" onclick="comIn2()" class="btn btn-success"/>
+      </p>
+    </form>
+    <div name="demo" id="demo"></div>
+    
+  </div>
+  <p><br/></p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test6.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict'
+    // alert("저희 홈페이지를 방문해 주셔서 감사합니다~")
+
+    function fCheck(){
+      alert("환영합니다.");
+
+    }
+
+    function onLoadFunc(){
+      alert("저희 홈페이지를 방문해 주셔서 감사합니다.");
+    }
+
+    function onUnLoadFunc(){
+      alert("가시는 길 조심히...");
+    }
+
+
+  </script>
+
+
+</head>
+<body onload="onLoadFunc()" onunload="onUnLoadFunc">
+  <p><br/></p>
+  <div class="container">
+    <h2>onLoad 이벤트 처리</h2>
+    <input type="button" value="onLoad호출" onclick="fCheck()"/>
+    <input type="button" value="페이지 이동" onclick="location.href='https://www.naver.com/'"/>
+    
+    
+  </div>
+  <p><br/></p>
+</body>
+</html>
