@@ -11,15 +11,32 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="test2_ex.js"></script>
   <script>
+    let idClear =false;
+    let pwClear =false;
+    let nameClear =false;
+    let juminClear =false;
+    let nickClear =false;
+    let telClear =false;
+    let emailClear =false;
+
+    
+
     function check(){
-      IdCheck();
-      PwCheck();
-      NameCheck();
-      juminCheck();
-      nickCheck();
-      telCheck();
-      emailCheck();
+      if(!idClear) idClear = idCheck();
+      if(!pwClear) pwClear = pwCheck();
+      if(!nameClear) nameClear = nameCheck();
+      if(!juminClear) juminClear = juminCheck();
+      if(!telClear) telClear = telCheck();
+      if(!emailClear) emailClear = emailCheck();
+      nextPage();
     }
+
+    function nextPage(){
+        if(idClear && pwClear && nameClear && juminClear && nickClear && telClear && emailClear){
+            location.href="https://www.naver.com" //임시링크
+        }
+    }
+
   </script>
 </head>
 <body>
@@ -44,7 +61,7 @@
         <h1>환영합니다!</h1>
     </header>
     <form name="firstform" id="firstform" method="post" action="#">
-    <article style="margin-top: 340px;">
+    <article style="margin-top: 140px;">
         <div class="align-self-center row text-center mt-5" >
             <div class="col"></div>
             <div class="col"><label for="id"><h2>ID</h2></label></div>

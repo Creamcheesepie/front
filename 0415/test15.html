@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test15.html</title>
+  <script>
+    'use strict';
+    // 배열 선언 : new array();
+    const arr1 = new Array();
+    const fruits = ['사과','배','바나나','딸기','포도'];
+
+    document.write("1. " + fruits + "<br/>");
+    console.log('1,' + fruits);
+    document.write("2. " + fruits.length + "<br/>");
+    document.write("3. " + fruits[0] + "<br/>");
+    document.write("4. " + fruits[fruits.length-1] + "<br/><br/><br/>");
+    for(let fruit of fruits){ // 각 값을 추출할 댸 사용
+      document.write(fruit + "/");
+    }
+    document.write('<br/>');
+    for(let fruit in fruits){ //인덱스 번호 추출 할 때 사용함
+      document.write(fruit + "/");
+    }
+    document.write('<br/>');
+    
+    //향상된 for문에 forEach 사용
+    fruits.forEach(function(){
+      document.write("값 : ")
+    });
+    document.write('<hr/><br/>');
+    
+    fruits.forEach(function(fruit){
+      document.write(fruit+ " /  ")
+    });
+    document.write('<hr/><br/>');
+    
+    fruits.forEach(function(fruit,i){
+      document.write(i+"번 :"+ fruit+ " /  ")
+    });
+    document.write('<hr/><br/>');
+    
+    fruits.forEach(function(fruit,i,array){
+      document.write(i+"번 :"+ fruit+ " /  " + array + "<br/>")
+    });
+    document.write('<hr/><br/>');
+    
+    //arrow function
+    fruits.forEach((fruit,index)=>{
+      document.write(index+ " : "+ fruit + "<br/>");
+    });
+    
+    document.write('<hr/><br/>');
+    //map function 사용법 map((index,값,배열명))
+    fruits.map((fruit,index)=>{
+      document.write(index + " : " + fruit+"<br/>")
+    })
+    
+    </script>
+</head>
+<body>
+  <h2>배열연습</h2>
+  <hr/>
+  <div id="demo"></div>
+</body>
+</html>

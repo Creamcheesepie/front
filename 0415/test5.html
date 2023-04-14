@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test5.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict'
+    let str = '';
+    function cCheck(e){
+      if(e.checked){
+        demo.innerHTML = '<font color="red"><b>'+e.value+'</b></font> 선택';
+      }
+      else{
+        demo.innerHTML = '<font color="red"><b>'+e.value+'</b></font> 취소';
+      }
+    }
+    
+    function fCheck(){
+      str='';
+      let len = myform.season.length;
+      
+      for(let i = 0 ; i<len;i++){
+        if(myform.season[i].checked){
+          str+= myform.season[i].value + "/";
+        }
+      }
+      str = str.substring(0,str.length-1);
+      demo.innerHTML = '<font color="red"><b>'+str+'</b></font> 선택';
+    }
+    //거꾸로 체크~
+    function rCheck(){
+      str='';
+      let len = myform.season.length;
+      
+      for(let i = 0 ; i<len;i++){
+        if(myform.season[i].checked) myform.season[i].checked =false;
+        else if(! myform.season[i].checked) myform.season[i].checked =true;
+      }
+      str = str.substring(0,str.length-1);
+      demo.innerHTML = '<font color="red"><b>'+str+'</b></font> 선택';
+    }
+    //체크!!!
+    function rCheck2(){
+      for(let i = 0 ; i<len;i++){
+        myform.season[i].checked = !myform.season[i].checked
+      }
+    }
+    
+    function allCheck(){
+      let len = myform.season.length;
+      for(let i = 0 ; i<len;i++){
+        myform.season[i].checked = true;
+      }
+      fCheck();
+    }
+    function allCancle(){
+      let len = myform.season.length;
+      for(let i = 0 ; i<len;i++){
+        myform.season[i].checked = false;
+      }
+      fCheck();
+    }
+  </script>
+
+
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h2>좋아하는 계절은?</h2>
+    <form name="myform">
+      <p>
+        <input type="checkbox" name="season" id="season1" value="봄" onclick="cCheck(this)"/>봄 &nbsp;
+        <input type="checkbox" name="season" id="season2" value="여름" onclick="cCheck(this)"/>여름 &nbsp;
+        <input type="checkbox" name="season" id="season3" value="가을" onclick="cCheck(this)"/>가을 &nbsp;
+        <input type="checkbox" name="season" id="season4" value="겨울" onclick="cCheck(this)"/>겨울 &nbsp;
+      </p>
+      <P>
+        <input type="button" value="선택" onclick="fCheck()" class="btn btn-success"/>
+        <input type="button" value="전체선택" onclick="allCheck()" class="btn btn-primary"/>
+        <input type="button" value="전체선택취소" onclick="allCancle()" class="btn btn-danger"/>
+        <input type="button" value="선택반전" onclick="rCheck()" class="btn btn-warning"/>
+        <input type="button" value="선택반전" onclick="rCheck2()" class="btn btn-warning"/>
+      </P>
+    </form>
+    <hr/>
+    <div id="demo" name="demo"></div>
+    
+  </div>
+  <p><br/></p>
+</body>
+</html>

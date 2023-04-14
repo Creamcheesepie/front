@@ -10,11 +10,9 @@ const regexJUMIN = /[0-9]{6}-[0-9]{7}/
 
 
 //다음 페이지 이동 위한 변수
-let idcheck =false;
-let pwcheck =false;
 
 //정규식 사용해서 유효성 검사하는 함수부
-function IdCheck(){
+function idCheck(){
     let id=document.getElementById("id").value.trim();
     if(id =='') alert("아이디를 입력해주세요.");
     else if(regexID.test(id)){
@@ -28,7 +26,7 @@ function IdCheck(){
     }
 }
 
-function PwCheck(){
+function pwCheck(){
     let pw =document.getElementById("pw").value.trim();
     if(pw =='') alert("비밀번호를 입력해주세요.");
     else if(regexPW.test(pw)){
@@ -38,10 +36,11 @@ function PwCheck(){
     else if(!regexPW.test(pw)){
         alert("비밀번호를 틀리게 입력했습니다. 다시 입력해 주세요. 영문,숫자, 특수문자 하나 이상 포함되어야합니다");
         document.getElementById("pw").focus();
+        return false;
     }
 
 }
-function NameCheck(){
+function nameCheck(){
     let name =document.getElementById("name").value.trim();
     if(name =='') alert("이름을 입력해주세요.");
     else if(regexName.test(name)){
@@ -51,6 +50,7 @@ function NameCheck(){
     else if(!regexName.test(name)){
         alert("이름을 틀리게 입력했습니다. 다시 입력해 주세요. 한글,영어만 됩니다.");
         document.getElementById("name").focus();
+        return false;
     }
 
 }
@@ -64,6 +64,7 @@ function juminCheck(){
     else if(!regexJUMIN.test(jumin)){
         alert("주민등록번호를 틀리게 입력했습니다. 다시 입력해 주세요. 앞자리6개- 뒷자리 7개입니다.");
         document.getElementById("jumin").focus();
+        return false;
     }
 
 }
@@ -73,8 +74,9 @@ function nickCheck(){
     if(nickname =='') alert("닉네임을 입력해주세요.");
     else if(regexNick.test(nickname)){
         alert("닉네임이 올바르게 입력했습니다.");
+        return true;
     }
-    else {
+    else if(!regexNick.test(nickname)) {
         alert("닉네임을 틀리게 입력했습니다. 다시 입력해 주세요. 닉네임은 한글만 됩니다.");
         document.getElementById("nickname").focus();
         return false;
@@ -86,8 +88,9 @@ function telCheck(){
     if(tel =='') alert("전화번호를 입력해주세요.");
     else if(regexTEL.test(tel)){
         alert("전화번호가 올바르게 입력했습니다.");
+        return true;
     }
-    else {
+    else if(!regexTEL.test(tel)){
         alert("전화번호를 틀리게 입력했습니다. 다시 입력해 주세요.");
         document.getElementById("tel").focus();
         return false;
@@ -99,8 +102,9 @@ function emailCheck(){
     if(nickname =='') alert("이메일을 입력해주세요.");
     else if(regexEmail.test(email)){
         alert("이메일이 올바르게 입력했습니다.");
+        return true;
     }
-    else {
+    else if(!regexEmail.test(email)){
         alert("이메일을 틀리게 입력했습니다. 다시 확인해 주세요.");
         document.getElementById("email").focus();
         return false;

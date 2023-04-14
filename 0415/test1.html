@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>teset1.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    //1. 논리값을 JSON을 이용해서 String형식으로 변환 전송
+    let json= JSON.stringify(true);
+    console.log(json);
+    console.log();
+
+    //2. 배열값을 JSON을 이용한 String 포맷으로 변환?
+    json = JSON.stringify(['apple','banana']);
+    console.log(json);
+
+    /*
+    const Member = {
+      key : value
+      name : '홍길동',
+      age : 25,
+      color : 'white',
+      birthday : new Date(),
+      size : null,
+      gender : true,
+      atom : () => {
+        console.log("성명 : " + Member.name);
+      }
+    }
+    */
+
+    const Member = {
+      name : '홍길동',
+      age : 25,
+      color : 'white',
+      birthday : new Date(),
+      size : null,
+      gender : true,
+      atom : () => {
+        console.log("atom으로 부르는 성명 : " + Member.name);
+      }
+    }
+    console.log("name : " + Member.name);
+    console.log("생일 : " + Member.birthday);
+    console.log("생일(날짜만) : " + Member.birthday.getDate());
+    console.log("atom함수 호출" +Member.atom());
+    //3. object를 json포맷형식으로 변환
+    json = JSON.stringify(Member);
+    console.log(json);
+    
+    //3-2. 앞의 정의된 object의 필요한 속성(key)만을 목록으로 만들어서 받을 수 있다.
+    json = JSON.stringify(Member, ['name','age','gender']);
+    console.log(json);
+    
+    //3-3. 앞에 정의 된 object에서 필요한 key값을 모른다면?
+    json = JSON.stringify(Member, (key,value)=>{
+      console.log(`key: ${key}, value: ${value}`);
+      return key,value;
+      // return key == 'name'?'홍길동' : value ; << 제대로 체크하기~~!!!
+    } );
+    console.log(json);
+    console.log();
+
+    //4.JSON 형식을 Object 형식으로 변환?
+    let obj = JSON.parse(json);
+    console.log(obj);
+    console.log();
+    
+    console.log(obj.name);
+    console.log(obj.age);
+    console.log(obj.color);
+    console.log(obj.birthday); 
+    console.log(obj.birthday.getDate); 
+    console.log();
+    console.log();
+
+    const obj2 = JSON.parse(json, (key,value)=>{
+      // return key, value;
+      return key == 'birthday' ? new Date(value) : value;
+    });
+    console.log(obj2);
+    console.log(obj2.birthday.getDate()+"일");
+
+    
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h2>웹을 통한 데이터의 전달 방식</h2>
+    <pre>
+      일반적으로 웹에서의 서버와의 통신방식은 HTTP를 이용한다.
+      HTTP :HyperText Transfer Protocol > 여기에서의 하이퍼 텍스트는 광의의 하이퍼 미디어를 의미한다
+            server와 client 사이의 값들을 전송해주는 통신을 정의한 프로토콜
+            클라이언트가 서버에 요청(request)하며, 서버는 클라이어트에 응답(response)한다.
+
+            서버와 클라이언트의 자료 전달 방식 :  XML , JSON
+            
+            AJAX : Asynchronous Javascript And XML -비동기 통신;
+            XML : HTML과 같은 마크업 언어로, 초창기에 주로 사용했던, 서버와 데이터를 주고받는 기술이다.(동기식)
+                  XML은 불필요한 태그가 많이 전송되기에 가독성이 떨어지는 편, 따라서 주로 많이 사용하지 않는 추세이다
+            JASON : Javascript Object Notaiton 으로 서버와의 필요한 데이터를 전송하는 포맷이다.
+                    JASON방식은 모바일에서 서버와 통신하는 전송방식에서 주로 사용되어옴
+                    프로그램의 종류나 플랫폼에 상관없이 사용할 수 있게 되었다.(예 : java, C, C++, python, php,go언어...)
+                    자바스크립트에서는 객체와 같이 "키(key)" : "값(value)"로 구성되어 있다.
+                    처리방식은 Object를 String으로 직렬화(serialize)해서 다시 Object로 변환하여 사용할 수 있다.
+  </pre>
+    
+    
+    
+  </div>
+  <p><br/></p>
+</body>
+</html>
