@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        'use strict'
+        let cnt=0;
+        function autoImageChange(){
+            setTimeout(autoImageChange,1500);
+            switch(cnt) {
+                case 0 :
+                    document.getElementById("playImage").innerHTML='<img src="./images/1.jpg" class="img-fluid"/>'
+                break;
+                case 1 :
+                    document.getElementById("playImage").innerHTML='<img src="./images/2.jpg" class="img-fluid"/>'
+                break;
+                case 2 :
+                    document.getElementById("playImage").innerHTML='<img src="./images/3.jpg" class="img-fluid"/>'
+                break;
+                case 3 :
+                    document.getElementById("playImage").innerHTML='<img src="./images/4.jpg" class="img-fluid"/>'
+                break;
+                case 4 :
+                    document.getElementById("playImage").innerHTML='<img src="./images/5.jpg" class="img-fluid"/>'
+                break;
+                case 5 :
+                    document.getElementById("playImage").innerHTML='<img src="./images/6.jpg" class="img-fluid"/>'
+                break;
+                case 6 :
+                    document.getElementById("playImage").innerHTML='<img src="./images/7.jpg" class="img-fluid"/>'
+                break;
+                case 7 :
+                    document.getElementById("playImage").innerHTML='<img src="./images/8.jpg" class="img-fluid"/>'
+                break;
+                case 8 :
+                    document.getElementById("playImage").innerHTML='<img src="./images/9.jpg" class="img-fluid"/>'
+                break;
+                case 9 :
+                    document.getElementById("playImage").innerHTML='<img src="./images/10.jpg" class="img-fluid"/>'
+                    cnt=0
+                    
+                break;
+            }
+            cnt++
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col">
+                    <div id="playImage" name="playImage" style="height: 600px;"></div><!--이곳에서 이미지 재생-->
+                </div>
+            </div>
+        </header>
+        <article>
+            <button type="button" onclick="autoImageChange()">이미지 재생</button>
+        </article>
+    </div>
+</body>
+</html>
