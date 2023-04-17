@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test7</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+  <script>
+    'use strict';
+    //*...jQuery는 범위를 잘 지정해주어야 한다...* 괄호범위가 잘 헷갈리는 편!
+    $(document).ready(function(){
+      let show = $('.container > div:visible');
+      console.log(show);
+
+      let showArr =[];
+      for(let i =0; i<show.length;i++){
+        showArr.push(show[i].innerHTML);
+        showArr.push($(show[i]).html);
+      }
+      console.log(showArr);
+      console.clear()
+
+      $("#demo").html(showArr);
+      $("#demo").text(showArr);
+      console.clear();
+      demo.innerHTML+='<br/>선그을게용<hr/>'
+      $('#demo div:first').html(showArr);
+
+      $('.container > div:hidden').map(function(index,item){
+        console.log(index,item);
+      })
+    });
+  </script>
+</head>
+<body>
+  <p><br></p>
+  <div class="container">
+    <h2>안녕하세용1</h2>
+    <div style="opacity: 0.7;">안녕하세용2</div>
+    <div style="display: none;">안녕하세용3</div>
+    <div style="visibility: hidden;">안녕하세용4</div>
+    <div style="overflow: hidden;">안녕하세용5(내용이 넘쳐야 적용됨.)</div>
+    <div style="overflow: hidden; width: 0px; height: 0px;">안녕하세용6</div>
+    <div>안녕하세용7</div>
+    <div>안녕하세용8</div>
+    <div>안녕하세용9</div>
+    <hr/>
+  </div>
+  <div name="demo" id="demo">
+    <div></div>
+    <div></div>
+  </div>
+  <hr/>
+  <div class="container2">
+    <div>안녕~!!1</div>
+    <div>안녕~!!2</div>
+    <div>안녕~!!3</div>
+  </div>
+</body>
+</html>

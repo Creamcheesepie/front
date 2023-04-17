@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열 복습</title>
+  <script>
+    let arr1;
+    arr1 = [];
+
+    function hobbySelect(){ //중복해서 들어가는데....
+      for(let i=0; i<document.getElementById("hobbySel").length;i++){
+        if(hobby.hobbySel[i].selected){
+          arr1.push(hobby.hobbySel[i].value);
+          console.log(arr1);
+        }
+      }
+    }
+    function unSelect(){
+      for(let i=0; i<document.getElementById("hobbySel").length;i++){
+        if(hobby.hobbySel[i].selected){
+          arr1.pop(hobby.hobbySel[i].value);
+          console.log(arr1);
+        }
+      }
+    }
+
+    function check(){
+      for(let i = 0;i<arr1.length;i++){
+        out.innerHTML +=arr1[i] +" ,";
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>
+    <h2>취미 선택</h2><br/>
+    <hr/>
+  <form name="hooby" id="hobby">
+    <select name="hobbySel" id="hobbySel" multiple size="5">
+      <option value="자전거">자전거</option>
+      <option value="등산">등산</option>
+      <option value="게임">게임</option>
+      <option value="쇼핑">쇼핑</option>
+      <option value="보드게임">보드게임</option>
+      <option value="사교">사교</option>
+      <option value="음주">음주</option>
+      <option value="산책">산책</option>
+      <option value="러닝">러닝</option>
+      <option value="헬스">헬스</option>
+      <option value="여행">여행</option>
+      <option value="영화">영화</option>
+    </select>
+    <button type="button" onclick="hobbySelect()">선택</button>
+    <button type="button" onclick="unSelect()">빼기</button>
+    <button type="button" onclick="check()">확인</button>
+  </form>
+  </p>
+  <hr>
+  <div name="out" id="out">선택하신 취미는 : </div>
+</body>
+</html>
